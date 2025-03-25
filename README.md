@@ -52,6 +52,8 @@ AlgoSmash is an end-to-end web solution designed to detect deepfake **videos** u
 
 ![image](https://github.com/user-attachments/assets/cd2b2342-50c7-4b38-a977-1ada4e21286c)
 
+![image](https://github.com/user-attachments/assets/8afeb4af-3891-4383-9d9f-6e7d4a3cf6f6)
+
 
  ## To-Do
  
