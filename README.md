@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AlgoSmash  
+A DeepFake Video Detection Web Application powered by AI.
 
-## Getting Started
+AlgoSmash is an end-to-end web solution designed to detect deepfake **videos** using a lightweight PyTorch model. The frontend is built with **Next.js** and **Tailwind CSS**, while the backend is a **Flask API** serving predictions via a `.pt` model. It processes uploaded videos frame-by-frame and classifies them into real or deepfake categories.
 
-First, run the development server:
 
-```bash
+## Features
+
+ Accepts **video uploads** via frontend interface
+- Frame-by-frame deepfake classification using PyTorch model
+- Fast and scalable backend powered by Flask + Gunicorn
+- Predicts from 6 classes: Real, FaceSwap, Face2Face, NeuralTextures, FaceShifter, DeepfakeDetection
+- Displays per-class metrics, including Precision, Recall, and F1-Score
+- Docker support for clean deployment
+
+## Workflow
+
+1. Users upload a video file.
+2. Frontend sends a `POST` request to `http://localhost:3001/predict`.
+3. Backend:
+   - Extracts frames from the video using OpenCV.
+   - Passes frames to the `.pt` model for prediction.
+   - Aggregates predictions into a final label.
+4. Frontend displays the classification result (`Real` or deepfake class) back to the user.
+
+---
+
+## Model Info
+
+- Format: PyTorch `.pt` file
+- Input: Frames extracted from uploaded video
+- Classes:
+  - Real
+  - Face2Face
+  - FaceSwap
+  - NeuralTextures
+  - FaceShifter
+  - DeepfakeDetection
+- Performance:
+  - Accuracy: **84%**
+  - Macro Avg F1-Score: **0.85**
+## Frontend 
+
+cd frontEnd
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ ## To-Do
+ 
+ Improve detection speed for longer videos
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+ Add preview thumbnails or frame-level predictions
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+ Deploy backend to HuggingFace Spaces or Render
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
