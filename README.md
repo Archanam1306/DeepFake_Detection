@@ -31,19 +31,27 @@ AlgoSmash is an end-to-end web solution designed to detect deepfake **videos** u
 - Input: Frames extracted from uploaded video
 - Classes:
   - Real
-  - Face2Face
-  - FaceSwap
-  - NeuralTextures
-  - FaceShifter
-  - DeepfakeDetection
+  - Fake
+- Datasets Used
+  - FakeFace++
 - Performance:
   - Accuracy: **84%**
   - Macro Avg F1-Score: **0.85**
 ## Frontend 
 
-cd frontEnd
-npm install
-npm run dev
+- cd frontEnd
+- npm install
+- npm run dev
+
+
+![image](https://github.com/user-attachments/assets/c079efbd-4fec-4a4f-8193-97baf04a5a75)
+
+![image](https://github.com/user-attachments/assets/a1e7d038-0db4-4a85-8e50-e627fea9916d)
+
+![image](https://github.com/user-attachments/assets/372a1d78-88de-4149-bd90-09f88b488843)
+
+![image](https://github.com/user-attachments/assets/cd2b2342-50c7-4b38-a977-1ada4e21286c)
+
 
  ## To-Do
  
@@ -52,6 +60,8 @@ npm run dev
  Add preview thumbnails or frame-level predictions
 
  Deploy backend to HuggingFace Spaces or Render
+
+
 
 
 
